@@ -1,4 +1,6 @@
-package PraticalProject01;
+package PraticalProject01.email;
+
+import PraticalProject01.Notification;
 
 class EmailNotification extends Notification {
     public void send() {
@@ -7,9 +9,5 @@ class EmailNotification extends Notification {
 
     public void recieve() {
         System.out.println("Receiving email notification");
-    }
-
-    public String toString() {
-        return "Email";
     }
 }
