@@ -2,12 +2,25 @@ package PraticalProject01;
 
 
 public class SystemSettings {
-    private SystemSettings(){}
+    String aplicationName;
+    String server;
+    Integer MAX_RETRY;
+
+    
     private static SystemSettings instance;
 
-    public static SystemSettings getInstance () {
-        if (instance == null) // 1a vez que chama-se getInstance
-        instance = new SystemSettings ();
+
+    private SystemSettings (String aplicationName, String server, Integer mAX_RETRY) {
+        this.aplicationName = aplicationName;
+        this.server = server;
+        MAX_RETRY = mAX_RETRY;
+    }
+
+
+    public static SystemSettings getInstance (String aplicationName, String server, Integer mAX_RETRY) {
+        if (instance == null)
+        instance = new SystemSettings (aplicationName, server, mAX_RETRY);
         return instance;
     }
+
 }
