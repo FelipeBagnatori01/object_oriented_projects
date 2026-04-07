@@ -7,6 +7,16 @@ import PraticalProject01.email.EmailNotification;
 import PraticalProject01.push.PushNotification;
 import PraticalProject01.sms.SmsNotification;
 
+// The tests demonstrate:
+
+// Factory pattern working correctly (creating instances)
+
+// Polymorphism (factories return base Notification type)
+
+// Each notification type's send/receive functionality
+
+// Easy expansion - adding a new notification type just requires adding another test section
+
 public class Main {
     public static void main(String[] args) {
         SystemSettings.getInstance("MyApp", "server.example.com", 3);
