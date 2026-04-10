@@ -1,8 +1,8 @@
-package PraticalProject01.sms;
+package PraticalProject01.classes.sms;
 
-import PraticalProject01.Notification;
+import PraticalProject01.interfaces.NotificationInterface;
 
-public class SmsNotification extends Notification {
+public class SmsNotification implements NotificationInterface {
     public void send() {
         System.out.println("Sending sms notification");
     }

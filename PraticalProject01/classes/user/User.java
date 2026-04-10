@@ -1,0 +1,50 @@
+package PraticalProject01.classes.user;
+
+public class User {
+    private String userType;
+    private String name;
+    private String email;
+    private int age;
+
+    public User(String userType, String name, String email, int age) {
+        this.userType = userType;
+        this.name = name;
+        this.email = email;
+        this.age = age;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    
+    
+}

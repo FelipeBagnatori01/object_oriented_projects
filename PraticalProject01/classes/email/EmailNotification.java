@@ -1,8 +1,8 @@
-package PraticalProject01.email;
+package PraticalProject01.classes.email;
 
-import PraticalProject01.Notification;
+import PraticalProject01.interfaces.NotificationInterface;
 
-public class EmailNotification extends Notification {
+public class EmailNotification implements NotificationInterface {
     public void send() {
         System.out.println("Sending email notification");
     }
