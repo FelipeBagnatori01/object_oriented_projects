@@ -1,11 +1,12 @@
 package PraticalProject01;
 
-import PraticalProject01.email.EmailNotificationFactory;
-import PraticalProject01.push.PushNotificationFactory;
-import PraticalProject01.sms.SmsNotificationFactory;
-import PraticalProject01.email.EmailNotification;
-import PraticalProject01.push.PushNotification;
-import PraticalProject01.sms.SmsNotification;
+import PraticalProject01.adapters.SmsAdapter;
+import PraticalProject01.classes.email.EmailNotification;
+import PraticalProject01.classes.email.EmailNotificationFactory;
+import PraticalProject01.classes.push.PushNotification;
+import PraticalProject01.classes.push.PushNotificationFactory;
+import PraticalProject01.classes.sms.SmsNotification;
+import PraticalProject01.classes.sms.SmsNotificationFactory;
 
 // The tests demonstrate:
 
@@ -32,9 +33,11 @@ public class Main {
         pushNotif.recieve();
         
         System.out.println("\n=== Testing SMS Notification ===");
+        System.out.println("Using Adapter: ");
         SmsNotification smsNotif = (SmsNotification) SmsNotificationFactory.create();
-        smsNotif.send();
-        smsNotif.recieve();
+        SmsAdapter smsNew = new SmsAdapter(smsNotif);
+        smsNew.sendX();
+        smsNew.recieveX();
         
         System.out.println("\n=== All tests completed ===");
     }

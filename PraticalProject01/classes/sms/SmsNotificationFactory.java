@@ -1,4 +1,4 @@
-package PraticalProject01.sms;
+package PraticalProject01.classes.sms;
 
 import PraticalProject01.Notification;
 

@@ -1,4 +1,4 @@
-package PraticalProject01.push;
+package PraticalProject01.classes.push;
 
 import PraticalProject01.Notification;
 

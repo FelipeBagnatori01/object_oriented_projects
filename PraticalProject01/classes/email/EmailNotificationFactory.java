@@ -1,4 +1,4 @@
-package PraticalProject01.email;
+package PraticalProject01.classes.email;
 
 import PraticalProject01.Notification;
 
