@@ -1,4 +1,4 @@
-package PraticalProject01;
+package PraticalProject01.interfaces;
 
 public interface Notification {
     public void send();

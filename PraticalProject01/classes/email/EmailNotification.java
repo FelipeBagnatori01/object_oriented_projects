@@ -1,6 +1,6 @@
 package PraticalProject01.classes.email;
 
-import PraticalProject01.Notification;
+import PraticalProject01.interfaces.Notification;
 
 public class EmailNotification implements Notification {
     public void send() {
