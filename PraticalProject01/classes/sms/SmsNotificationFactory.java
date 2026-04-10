@@ -1,9 +1,9 @@
 package PraticalProject01.classes.sms;
 
-import PraticalProject01.interfaces.Notification;
+import PraticalProject01.interfaces.NotificationInterface;
 
 public class SmsNotificationFactory {
-    public static Notification create() {
+    public static NotificationInterface create() {
         return new SmsNotification();
     }
 }

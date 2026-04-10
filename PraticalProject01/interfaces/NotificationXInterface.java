@@ -1,6 +1,6 @@
 package PraticalProject01.interfaces;
 
-public interface NotificationX {
+public interface NotificationXInterface {
     public void sendX();
     public void recieveX();
 }

@@ -1,9 +1,9 @@
 package PraticalProject01.adapters;
 
 import PraticalProject01.classes.sms.SmsNotification;
-import PraticalProject01.interfaces.NotificationX;
+import PraticalProject01.interfaces.NotificationXInterface;
 
-public class SmsAdapter implements NotificationX{
+public class SmsAdapter implements NotificationXInterface{
     private SmsNotification notification;
 
     public SmsAdapter(SmsNotification notification) {
