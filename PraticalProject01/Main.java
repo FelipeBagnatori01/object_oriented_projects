@@ -9,6 +9,7 @@ import PraticalProject01.classes.sms.SmsNotification;
 import PraticalProject01.classes.sms.SmsNotificationFactory;
 import PraticalProject01.proxys.NotificationProxy;
 import PraticalProject01.classes.user.User;
+import PraticalProject01.classes.homeTheater.HomeTheater;
 
 public class Main {
     public static void main(String[] args) {
@@ -53,6 +54,18 @@ public class Main {
         System.out.println("\nLog Result: ");
         proxyRegular.logNumbers();
         
+        System.out.println("\n=== Testing Home Theater Facade ===");
+        HomeTheater homeTheater = new HomeTheater();
+
+        System.out.println("\n-- Watch movie on Cinema --");
+        homeTheater.startMovieCinema();
+
+        System.out.println("\n-- Watch movie on TV --");
+        homeTheater.startMovieTv();
+
+        System.out.println("\n-- Listen to music --");
+        homeTheater.listenToMusic();
+
         System.out.println("\n=== All tests completed ===");
     }
 }
