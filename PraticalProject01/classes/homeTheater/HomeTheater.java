@@ -20,21 +20,43 @@ public class HomeTheater {
 
     public void startMovieCinema() {
         System.out.println("Get ready to watch a movie...");
-        light.power();
-        soundSystem.power();
-        projector.power();
+        if(light.isOn()) {
+            light.power();
+        }
+        if (!soundSystem.isOn()){
+            soundSystem.power();
+        }
+        if (!projector.isOn()){
+            projector.power();
+        }
+    }
+
+    public void endMovie() {
+        System.out.println("Shutting down the cinema...");
+        if (light.isOn()) light.power();
+        if (soundSystem.isOn()) soundSystem.power();
+        if (projector.isOn()) projector.power();
+        if (tv.isOn()) tv.power();
     }
 
     public void startMovieTv() {
-        System.out.println("Get ready to watch a movie...");
-        light.power();
-        soundSystem.power();
-        tv.power();
+        System.out.println("Get ready to watch a movie on Tv");
+        if(!light.isOn()) {
+            light.power();
+        }
+        if (!soundSystem.isOn()) {
+            soundSystem.power();
+        }
+       if (!tv.isOn()) {
+            tv.power();
+        }
     }
 
     public void listenToMusic() {
         System.out.println("Get ready to listen to music...");
-        light.power();
-        soundSystem.power();
+
+        if (!light.isOn()) light.power();
+        
+        if (!soundSystem.isOn()) soundSystem.power();
     }
 }

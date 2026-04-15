@@ -10,6 +10,14 @@ import PraticalProject01.classes.sms.SmsNotificationFactory;
 import PraticalProject01.proxys.NotificationProxy;
 import PraticalProject01.classes.user.User;
 import PraticalProject01.classes.homeTheater.HomeTheater;
+import PraticalProject01.classes.coffeeshop.drinks.Beverage;
+import PraticalProject01.classes.coffeeshop.drinks.Espresso;
+import PraticalProject01.classes.coffeeshop.drinks.Cappuccino;
+import PraticalProject01.classes.coffeeshop.drinks.Tea;
+import PraticalProject01.classes.coffeeshop.decorators.Milk;
+import PraticalProject01.classes.coffeeshop.decorators.WhippedCream;
+import PraticalProject01.classes.coffeeshop.decorators.Cinnamon;
+import PraticalProject01.classes.coffeeshop.decorators.ChocolateSyrup;
 
 public class Main {
     public static void main(String[] args) {
@@ -59,12 +67,41 @@ public class Main {
 
         System.out.println("\n-- Watch movie on Cinema --");
         homeTheater.startMovieCinema();
+        homeTheater.endMovie();
 
         System.out.println("\n-- Watch movie on TV --");
         homeTheater.startMovieTv();
+        homeTheater.endMovie();
 
         System.out.println("\n-- Listen to music --");
         homeTheater.listenToMusic();
+        homeTheater.endMovie();
+
+        System.out.println("\n=== Testing Coffee Shop - Decorator Pattern ===");
+
+        // Pedido 1: Espresso simples
+        Beverage drink1 = new Espresso();
+        System.out.println("Pedido 1: " + drink1);
+
+        // Pedido 2: Cappuccino com Leite e Chantilly
+        Beverage drink2 = new Cappuccino();
+        drink2 = new Milk(drink2);
+        drink2 = new WhippedCream(drink2);
+        System.out.println("Pedido 2: " + drink2);
+
+        // Pedido 3: Chá com Canela e Calda de Chocolate
+        Beverage drink3 = new Tea();
+        drink3 = new Cinnamon(drink3);
+        drink3 = new ChocolateSyrup(drink3);
+        System.out.println("Pedido 3: " + drink3);
+
+        // Pedido 4: Espresso com todos os adicionais
+        Beverage drink4 = new Espresso();
+        drink4 = new Milk(drink4);
+        drink4 = new WhippedCream(drink4);
+        drink4 = new Cinnamon(drink4);
+        drink4 = new ChocolateSyrup(drink4);
+        System.out.println("Pedido 4: " + drink4);
 
         System.out.println("\n=== All tests completed ===");
     }
