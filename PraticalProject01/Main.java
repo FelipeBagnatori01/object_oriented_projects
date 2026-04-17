@@ -18,6 +18,8 @@ import PraticalProject01.classes.coffeeshop.decorators.Milk;
 import PraticalProject01.classes.coffeeshop.decorators.WhippedCream;
 import PraticalProject01.classes.coffeeshop.decorators.Cinnamon;
 import PraticalProject01.classes.coffeeshop.decorators.ChocolateSyrup;
+import PraticalProject01.classes.temperature.City;
+import PraticalProject01.classes.observers.WeatherStation;
 
 public class Main {
     public static void main(String[] args) {
@@ -102,6 +104,28 @@ public class Main {
         drink4 = new Cinnamon(drink4);
         drink4 = new ChocolateSyrup(drink4);
         System.out.println("Pedido 4: " + drink4);
+
+        System.out.println("\n=== Testing Observer Pattern - Weather Station ===");
+
+        WeatherStation station = new WeatherStation();
+
+        City saoPaulo = new City("São Paulo", 28.5, 55.0, 20.0, 12.3);
+        saoPaulo.addObserver(station);
+
+        City saoJoseDosCampos = new City("São Jose dos Campos", 25.0, 85.0, 55.0, 18.7);
+        saoJoseDosCampos.addObserver(station);
+
+        City campinas = new City("Campinas", 30.2, 70.0, 65.0, 9.5);
+        campinas.addObserver(station);
+
+        System.out.println("\n-- Initial readings --");
+        saoPaulo.notifyObservers();
+        saoJoseDosCampos.notifyObservers();
+        campinas.notifyObservers();
+
+        System.out.println("\n-- Updating Sao Paulo temperature --");
+        saoPaulo.setTemperature(22.0);
+        saoPaulo.notifyObservers();
 
         System.out.println("\n=== All tests completed ===");
     }
