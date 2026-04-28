@@ -20,6 +20,10 @@ import PraticalProject01.classes.coffeeshop.decorators.Cinnamon;
 import PraticalProject01.classes.coffeeshop.decorators.ChocolateSyrup;
 import PraticalProject01.classes.temperature.City;
 import PraticalProject01.classes.observers.WeatherStation;
+import PraticalProject01.classes.reports.PopularityReport;
+import PraticalProject01.classes.reports.ProfitReport;
+import PraticalProject01.classes.reports.visitor.HtmlVisitor;
+import PraticalProject01.classes.reports.visitor.PdfVisitor;
 
 public class Main {
     public static void main(String[] args) {
@@ -126,6 +130,22 @@ public class Main {
         System.out.println("\n-- Updating Sao Paulo temperature --");
         saoPaulo.setTemperature(22.0);
         saoPaulo.notifyObservers();
+
+        System.out.println("\n=== Testing Visitor Pattern - Reports ===");
+
+        ProfitReport profitReport = new ProfitReport("Lucros T1 2026", "A receita superou as expectativas em 15%.");
+        PopularityReport popularityReport = new PopularityReport("Popularidade de Produtos", "O Produto A ficou em 1º lugar em vendas.");
+
+        HtmlVisitor htmlVisitor = new HtmlVisitor();
+        PdfVisitor pdfVisitor = new PdfVisitor();
+
+        System.out.println("\n-- Exporting reports as HTML --");
+        profitReport.accept(htmlVisitor);
+        popularityReport.accept(htmlVisitor);
+
+        System.out.println("\n-- Exporting reports as PDF --");
+        profitReport.accept(pdfVisitor);
+        popularityReport.accept(pdfVisitor);
 
         System.out.println("\n=== All tests completed ===");
     }
